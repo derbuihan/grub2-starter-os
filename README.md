@@ -1,15 +1,14 @@
 # MyOS
 
-This is a sample project for an operating system booting from Grub2.
+This is a sample project for building an operating system that boots from Grub2.
 
 # Setup
 
-This project is developed on Ubuntu 22.04.
+This project is developed using Ubuntu 22.04.
 
 ## Install Cross Compiler
 
-Run the following commands to install the cross compiler.
-You should rewrite gcc and binutils to the latest version.
+To install the cross compiler, execute the following commands. Please be sure to update gcc and binutils to the latest version.
 
 ```bash
 # Install dependencies
@@ -58,7 +57,7 @@ make install-gcc
 make install-target-libgcc
 ```
 
-`~/opt/cross/bin` should be added to the `PATH` environment variable.
+Be sure to add `~/opt/cross/bin` to the `PATH` environment variable.
 
 Reference: https://wiki.osdev.org/GCC_Cross-Compiler
 
@@ -68,9 +67,9 @@ Reference: https://wiki.osdev.org/GCC_Cross-Compiler
 sudo apt install qemu-system-x86
 ```
 
-## Setup grub2 
+## Setup Grub2
 
-Install tools for building ISO images
+Install the tools required to build ISO images.
 
 ```bash
 sudo apt install xorriso mtools
@@ -78,23 +77,23 @@ sudo apt install xorriso mtools
 
 # Build
 
-Create an ISO image
+To create an ISO image, use the following command-
 
 ```bash
 ./build.sh
 ```
 
-`myos.iso` will be created.
+This will create `myos.iso`.
 
 # Run
 
-Run the OS with the following command.
+Use the following command to run the OS:
 
 ```bash
 qemu-system-x86_64 -cdrom ./myos.iso
 ```
 
-Run the kernel directly.
+To execute the kernel directly, use this command:
 
 ```bash
 qemu-system-x86_64 -kernel ./bin/myos.bin
@@ -102,13 +101,13 @@ qemu-system-x86_64 -kernel ./bin/myos.bin
 
 # Real Hardware
 
-Write the ISO image to a USB memory.
+To write the ISO image to a USB memory stick, use the following command:
 
 ```bash
 sudo dd if=./myos.iso of=/dev/sdb
 ```
 
-Boot from the USB memory.
+Then, boot using the USB memory stick.
 
 # References
 
