@@ -10,6 +10,9 @@ This project is developed using Ubuntu 22.04.
 
 To install the cross compiler, execute the following commands. Please be sure to update gcc and binutils to the latest version.
 
+<details>
+<summary>Click to expand</summary>
+
 ```bash
 # Install dependencies
 
@@ -56,6 +59,8 @@ make all-target-libgcc
 make install-gcc
 make install-target-libgcc
 ```
+
+</details>
 
 Be sure to add `~/opt/cross/bin` to the `PATH` environment variable.
 
